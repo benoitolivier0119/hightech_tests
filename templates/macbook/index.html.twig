@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des portables macbook{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Liste des portables macbook</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Diagonale</th>
+                <th>Chipset</th>
+                <th>Processeur</th>
+                <th>Ram</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Stockage</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for macbook in macbooks %}
+            <tr>
+                <td>{{ macbook.id }}</td>
+                <td>{{ macbook.marque }}</td>
+                <td>{{ macbook.diagonale }}</td>
+                <td>{{ macbook.chipset }}</td>
+                <td>{{ macbook.processeur }}</td>
+                <td>{{ macbook.ram }}</td>
+                <td>{{ macbook.prix }}</td>
+                <td>{{ macbook.image }}</td>
+                <td>{{ macbook.stockage }}</td>
+                <td>{{ macbook.description }}</td>
+                <td>
+                    <a href="{{ path('macbook_show', {'id': macbook.id}) }}">voir</a>
+                    <a href="{{ path('macbook_edit', {'id': macbook.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('macbook_new') }}">Enregistrer un nouveau portable macbook</a>
+    </div>
+{% endblock %}

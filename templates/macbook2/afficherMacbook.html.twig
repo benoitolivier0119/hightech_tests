@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Macbook{% endblock %}
+{% block monTitre %}Macbook{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+       
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ macbook.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        
+                        <h3>{{ macbook.marque }}</h3>
+                        <p> {{ macbook.description }}</p>
+                        <p>Diagonale : {{ macbook.diagonale }} "</p><hr>
+                        <p>Prix : {{ macbook.prix }} €</p><hr>
+                        <p>Carte graphique : {{ macbook.chipset }} </p><hr>
+                        <p>Processeur : {{ macbook.processeur }} </p><hr>
+                        <p>Ram : {{ macbook.ram }} Go</p><hr>
+                        <p>Stockage : {{ macbook.stockage }} </p>
+                        
+                    </div>
+                </div>
+            </div>
+     
+    </div>
+
+{% endblock %}

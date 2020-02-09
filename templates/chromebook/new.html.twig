@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau portable chromebook{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Enregistrer</h1>
+
+    {{ include('chromebook/_form.html.twig') }}
+
+    <a href="{{ path('chromebook_index') }}">retour à la liste</a>
+    </div>
+{% endblock %}

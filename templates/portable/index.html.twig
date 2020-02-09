@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des portables{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Liste des portables</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Diagonale</th>
+                <th>Chipset</th>
+                <th>Processeur</th>
+                <th>Ram</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Stockage</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for portable in portables %}
+            <tr>
+                <td>{{ portable.id }}</td>
+                <td>{{ portable.marque }}</td>
+                <td>{{ portable.diagonale }}</td>
+                <td>{{ portable.chipset }}</td>
+                <td>{{ portable.processeur }}</td>
+                <td>{{ portable.ram }}</td>
+                <td>{{ portable.prix }}</td>
+                <td>{{ portable.image }}</td>
+                <td>{{ portable.stockage }}</td>
+                <td>{{ portable.description }}</td>
+                <td>
+                    <a href="{{ path('portable_show', {'id': portable.id}) }}">voir</a>
+                    <a href="{{ path('portable_edit', {'id': portable.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('portable_new') }}">Enregistrer un nouveau portable</a>
+    </div>
+{% endblock %}

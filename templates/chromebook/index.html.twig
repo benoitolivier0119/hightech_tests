@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des portables chromebook{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <h1>Liste des portables chromebook</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Diagonale</th>
+                <th>Chipset</th>
+                <th>Processeur</th>
+                <th>Ram</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Stockage</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chromebook in chromebooks %}
+            <tr>
+                <td>{{ chromebook.id }}</td>
+                <td>{{ chromebook.marque }}</td>
+                <td>{{ chromebook.diagonale }}</td>
+                <td>{{ chromebook.chipset }}</td>
+                <td>{{ chromebook.processeur }}</td>
+                <td>{{ chromebook.ram }}</td>
+                <td>{{ chromebook.prix }}</td>
+                <td>{{ chromebook.image }}</td>
+                <td>{{ chromebook.stockage }}</td>
+                <td>{{ chromebook.description }}</td>
+                <td>
+                    <a href="{{ path('chromebook_show', {'id': chromebook.id}) }}">voir</a>
+                    <a href="{{ path('chromebook_edit', {'id': chromebook.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('chromebook_new') }}">enregistrer un nouveau chromebook</a>
+ </div>
+{% endblock %}

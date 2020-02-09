@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PC Portable{% endblock %}
+{% block monTitre %}Tous les portables{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+        {% for pc_portable in portable %}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ pc_portable.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                        <a href="{{ path('afficher_portable', {'id': pc_portable.id}) }}" >{{ pc_portable.marque }} </a>
+                        </h4>
+                        <p>prix : {{ pc_portable.prix }} €</p>
+                    <a href="{{ path('panier_ajout', {'id': pc_portable.id}) }}" class="btn btn-block btn-sm btn-light">
+   Ajouter panier                       
+</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

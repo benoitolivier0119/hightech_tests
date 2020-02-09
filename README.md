@@ -1,2 +1,2 @@
-# hightech_tests
-tests hightech
+# hightech1
+test hightech

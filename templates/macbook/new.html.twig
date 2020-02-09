@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau portable macbook{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Enregistrer un nouveau portable macbook</h1>
+
+    {{ include('macbook/_form.html.twig') }}
+
+    <a href="{{ path('macbook_index') }}">retour à la liste</a>
+    </div>
+{% endblock %}

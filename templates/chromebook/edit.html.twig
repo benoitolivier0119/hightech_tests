@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un portable chromebook{% endblock %}
+
+{% block body %}
+
+    <div class="container my-5">
+    <h1>Modifier un portable chromebook</h1>
+
+    {{ include('chromebook/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('chromebook_index') }}">retour à la liste</a>
+
+    {{ include('chromebook/_delete_form.html.twig') }}
+
+    </div>
+{% endblock %}

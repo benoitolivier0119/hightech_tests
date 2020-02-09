@@ -1,0 +1,28 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}PC gamer{% endblock %}
+{% block monTitre %}Tous les portables gamer{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+        {% for pc_gamer in gamer %}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ pc_gamer.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                        <a href="{{ path('afficher_gamer', {'id': pc_gamer.id}) }}" >{{ pc_gamer.marque }} </a>
+                        </h4>
+                        <p>prix : {{ pc_gamer.prix }} €</p>
+                        
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

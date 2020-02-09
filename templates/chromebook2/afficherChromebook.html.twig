@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chromebook{% endblock %}
+{% block monTitre %}Chromebook{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+       
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ chromebook.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        
+                        <h3>{{ chromebook.marque }}</h3>
+                        <p> {{ chromebook.description }}</p>
+                        <p>Diagonale : {{ chromebook.diagonale }} "</p><hr>
+                        <p>Prix : {{ chromebook.prix }} €</p><hr>
+                        <p>Carte graphique : {{ chromebook.chipset }} </p><hr>
+                        <p>Processeur : {{ chromebook.processeur }} </p><hr>
+                        <p>Ram : {{ chromebook.ram }} Go</p><hr>
+                        <p>Stockage : {{ chromebook.stockage }} </p>
+                        
+                    </div>
+                </div>
+            </div>
+     
+    </div>
+
+{% endblock %}

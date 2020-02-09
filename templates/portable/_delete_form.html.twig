@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('portable_delete', {'id': portable.id}) }}" onsubmit="return confirm('Etes vous sure de vouloir effacer cette article ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ portable.id) }}">
+    <button class="btn">Effacer</button>
+</form>

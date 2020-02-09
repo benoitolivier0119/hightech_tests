@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrer un nouveau portable gamer{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Enregistrer un nouveau portable gamer</h1>
+
+    {{ include('gamer/_form.html.twig') }}
+
+    <a href="{{ path('gamer_index') }}">retour à la liste</a>
+    </div>
+{% endblock %}

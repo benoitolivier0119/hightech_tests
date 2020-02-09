@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des portables gamer{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1>Liste des portables gamer</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marque</th>
+                <th>Diagonale</th>
+                <th>Chipset</th>
+                <th>Processeur</th>
+                <th>Ram</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Stockage</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gamer in gamers %}
+            <tr>
+                <td>{{ gamer.id }}</td>
+                <td>{{ gamer.marque }}</td>
+                <td>{{ gamer.diagonale }}</td>
+                <td>{{ gamer.chipset }}</td>
+                <td>{{ gamer.processeur }}</td>
+                <td>{{ gamer.ram }}</td>
+                <td>{{ gamer.prix }}</td>
+                <td>{{ gamer.image }}</td>
+                <td>{{ gamer.stockage }}</td>
+                <td>{{ gamer.description }}</td>
+                <td>
+                    <a href="{{ path('gamer_show', {'id': gamer.id}) }}">voir</a>
+                    <a href="{{ path('gamer_edit', {'id': gamer.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gamer_new') }}">Enregistrer un nouveau portable gamer</a>
+    </div>
+{% endblock %}

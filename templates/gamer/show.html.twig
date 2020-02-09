@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portable gamer{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1>Portable gamer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gamer.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ gamer.marque }}</td>
+            </tr>
+            <tr>
+                <th>Diagonale</th>
+                <td>{{ gamer.diagonale }}</td>
+            </tr>
+            <tr>
+                <th>Chipset</th>
+                <td>{{ gamer.chipset }}</td>
+            </tr>
+            <tr>
+                <th>Processeur</th>
+                <td>{{ gamer.processeur }}</td>
+            </tr>
+            <tr>
+                <th>Ram</th>
+                <td>{{ gamer.ram }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ gamer.prix }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ gamer.image }}</td>
+            </tr>
+            <tr>
+                <th>Stockage</th>
+                <td>{{ gamer.stockage }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ gamer.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gamer_index') }}">retour à la liste</a>
+
+    <a href="{{ path('gamer_edit', {'id': gamer.id}) }}">modifier</a>
+
+    {{ include('gamer/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

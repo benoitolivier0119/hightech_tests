@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gamer{% endblock %}
+{% block monTitre %}Gamer{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+       
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ gamer.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        
+                        <h3>{{ gamer.marque }}</h3>
+                        <p> {{ gamer.description }}</p>
+                        <p>Diagonale : {{ gamer.diagonale }} "</p><hr>
+                        <p>Prix : {{ gamer.prix }} €</p><hr>
+                        <p>Carte graphique : {{ gamer.chipset }} </p><hr>
+                        <p>Processeur : {{ gamer.processeur }} </p><hr>
+                        <p>Ram : {{ gamer.ram }} Go</p><hr>
+                        <p>Stockage : {{ gamer.stockage }} </p>
+                        
+                    </div>
+                </div>
+            </div>
+     
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PC Chromebook{% endblock %}
+{% block monTitre %}Tous les portables chromebook{% endblock %}
+{% block body %}
+
+
+ <div class="row">
+        {% for pc_chromebook in chromebook %}
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card border-light mb-3">
+                    <div class="card-header text-center">
+                        <img src="{{asset('img/' ~ pc_chromebook.image)}}" width="300" height="300">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                        <a href="{{ path('afficher_chromebook', {'id': pc_chromebook.id}) }}" >{{ pc_chromebook.marque }} </a>
+                        </h4>
+                        <p>prix : {{ pc_chromebook.prix }} €</p>
+                        
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
